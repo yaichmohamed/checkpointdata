@@ -1,0 +1,41 @@
+program SumOfDistinctElements;
+
+type
+IntArray = array of Integer;
+
+function SumOfDistinctElements(set1, set2: IntArray): Integer;
+
+var
+distinctElements: array of Boolean;
+elem, i, sum: Integer;
+
+begin
+// Initialize distinct elements array
+SetLength(distinctElements, 100000); // Assumes max element value is 100000
+for i := 0 to Length(distinctElements) - 1 do
+distinctElements[i] := false;
+
+// Sum distinct elements in set1
+sum := 0;
+for elem in set1 do
+begin
+if not distinctElements[elem] then
+begin
+distinctElements[elem] := true;
+sum := sum + elem;
+end;
+end;
+
+// Sum distinct elements in set2
+for elem in set2 do
+begin
+if not distinctElements[elem] then
+begin
+distinctElements[elem] := true;
+sum := sum + elem;
+end;
+end;
+
+// Return sum of distinct elements
+SumOfDistinctElements := sum;
+end;
