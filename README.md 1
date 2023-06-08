@@ -1,0 +1,7 @@
+This program calculates the sum of distinct elements in two sets of integers. It defines a function SumOfDistinctElements that takes two arrays of integers (set1 and set2) as inputs and returns the sum of their distinct elements.
+
+The program uses a boolean array (distinctElements) to keep track of which elements are distinct. It initializes this array to false for all possible element values (up to 100000, assuming this is the maximum possible value).
+
+Then it iterates over the elements in set1 and set2, and for each element, it checks if it has already been marked as distinct in distinctElements. If it hasn't, it adds it to the sum and marks it as distinct in the array.
+
+Finally, the function returns the sum of distinct elements in both sets.
